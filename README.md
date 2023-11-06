@@ -35,6 +35,10 @@ As a job seekers:
 - npm i cookie-parser
 - npm i multer
 
+## Note
+
+- Run the code using node index.js
+
 
 ## Authors
 
