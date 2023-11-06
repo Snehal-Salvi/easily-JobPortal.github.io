@@ -1,0 +1,139 @@
+/* Posted Jobs CSS is mentioned here */
+
+.status{
+    background-color: rgb(125, 125, 159);
+    height: 25px;
+    width: 150px;
+    font-family: var(--text-font);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: 1px navy solid;
+    margin-bottom: 5px;
+}
+
+.active-icon{
+    color: green;
+}
+
+.card-container{
+    margin: 20px;
+    background-color: rgb(198, 198, 225);
+    box-shadow: 0px 0px 6px 4px black;
+    width: 20rem;
+    margin-top: 120px;
+}
+
+.card-title{
+    font-family: var(--text-font);
+    color: #ff6508;
+    font-weight: 900;
+    font-size: 30px;
+    margin: 0px;
+}
+
+.card-text{
+    font-family: var(--text-font);
+    color: #060145;
+    font-weight: 900;
+    font-size: 20px;
+    margin: 0px;
+}
+
+.rs-icon{
+    font-size: 15px;
+}
+
+.skills {
+    font-family: var(--text-font);
+    background-color: rgb(238, 238, 246);
+    border-radius: 8px;
+    border: 2px solid black;
+    margin: 2px;
+    display: block;
+    max-width: 250px;
+   font-weight: 800;
+   color: black;
+   
+  }
+  
+  .skills:hover {
+    background-color: rgb(82, 85, 89);
+  }
+
+
+.view-details-button{
+    font-family: var(--text-font);
+    background-color: #181642;
+    margin-top: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+.pagination{
+    margin-top: 500px;
+
+}
+.layout-container {
+    width: 80vw;
+    height: fit-content;
+    background-color: #dfdfdf;
+    margin: 20px auto;
+    border: 5px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 4px black;
+    padding: 20px; 
+    text-align: center; 
+}
+
+.form-heading {
+    font-family: var(--text-font);
+    font-weight: 900;
+    font-size: 50px; 
+}
+
+.form-group {
+    margin: 10px auto; 
+    width: 70vw;
+    text-align: left; 
+}
+
+.form-group label {
+    display: block; 
+    font-weight: bold; 
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px; 
+}
+
+.form-group select[multiple] {
+    height: 120px; 
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color:#146c43;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+@media (min-width: 1200px) {
+    .card-container {
+       width: 300px;
+        margin-right: 900px;
+    }  
+}

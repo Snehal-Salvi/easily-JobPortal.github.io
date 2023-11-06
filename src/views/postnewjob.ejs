@@ -1,0 +1,81 @@
+<!-- Form to Post new Job -->
+
+<div class="layout-container">
+ <form action="/new" method="post"> 
+          <h1 class="form-heading">Post New Job</h1>
+
+          <% if(errorMessage){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= errorMessage %>
+              </div>
+              <% } %>
+
+    <div class="form-group">
+        <label for="jobCategory">Job Category:</label>
+        
+        <select required name="job_category">
+            <option selected disabled>select job category</option>
+            <option value="Tech">Tech</option>
+            <option value="Non-Tech">Non Tech</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="jobDesignation">Job Designation:</label>
+        <select required name="job_designation">
+            <option selected disabled>select job designation</option>
+         
+            <option value="HR">HR</option>
+            <option value="SDE">SDE</option>
+            <option value="DevOps">DevOps</option>
+            <option value="MERN Developer">MERN Developer</option>
+            <option value="JAVA Developer">JAVA Developer</option>
+            <option value="Front-End Developer">Front-End Developer</option>
+            <option value="Back-End Developer">Back-End Developer</option>
+            <option value="Full-Stack Developer">Full-Stack Developer</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="jobLocation">Enter job location:</label>
+        <input required name="job_location" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="companyname">Enter Company Name:</label>
+        <input required id="company_name" name="company_name" type="text">
+    </div>  
+
+    <div class="form-group">
+        <label for="salary">Enter Salary(in LPA):</label>
+        <input required name="salary" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="noofopenings">Total Positions</label>
+        <input required name="no_of_openings" type="text">
+    </div>
+  
+    <div class="form-group">
+        <select required="" multiple="" name="skills_required" class="form-select" aria-label="Default select example">
+          <option selected="" disabled="">select skills required for this job</option>
+          <option value="React">React</option>
+          <option value="NodeJs">NodeJs</option>
+          <option value="Angular">Angular</option>
+          <option value="MongoDB">MongoDB</option>
+          <option value="SQL">SQL</option>
+          <option value="Express">Express</option>
+          <option value="Java">Java</option>
+          <option value="SpringBoot">SpringBoot</option>
+          <option value="C++">C++</option>
+          <option value="Data Structures &amp; Algo">Data Structures &amp; Algo</option>
+        </select>
+        <span class="form-group">Apply By</span>
+        <input name="apply_by" type="date" class="form-control" placeholder="total no of openings" aria-label="Server">
+      </div>
+      <button class="submit-btn w-100 mb-3 mt-2 btn btn-md btn-success" type="submit">
+        Submit
+      </button>
+
+</form> 
+</div>

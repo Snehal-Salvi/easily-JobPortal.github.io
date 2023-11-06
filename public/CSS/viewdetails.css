@@ -1,0 +1,70 @@
+/* View Details CSS is mentioned here */
+
+.viewdetails-container{
+    width: 80vw;
+    height: auto;
+    background-color: #dfdfdf;
+    margin: 20px auto;
+    border: 5px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 4px black;
+    padding: 20px; 
+    font-family: var(--text-font);  
+}
+
+.viewdetails-image{
+    width: 76vw;
+    height: 25vh;
+}
+
+.viewdetails-heading{
+    
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    color: #370b41;
+    text-decoration: underline;
+}
+
+.companyname{
+    color: #143514;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.applicants{
+    color: rgb(202, 43, 96);
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 5px;   
+}
+
+.apply-button{
+   margin-top: 20px;
+}
+
+.editdelete-section{
+    height: 50px;
+    width: 250px;
+    background-color: rgb(195, 178, 178);
+    box-shadow: 0px 0px 6px 4px #160f03;
+    border-radius: 8px;
+    color: green;
+    text-align: center;
+    padding: 5px;
+    font-size: 23px;
+    font-weight: 900;
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+  
+}
+
+.edit-icon{
+    color: blue;
+}
+
+.delete-icon{
+    color: red;
+}

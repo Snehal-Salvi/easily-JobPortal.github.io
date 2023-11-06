@@ -1,0 +1,31 @@
+/* Login and Registration form CSS is mentioned here */
+
+.login-container{
+    width: 50vw;
+    height: fit-content;
+    background-color: #000000;
+    margin: 20px auto;
+    border: 5px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 4px white;
+    padding: 20px; 
+    text-align: center; 
+    color: white;
+    font-family: var(--text-font);
+}
+
+.margin {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+  }
+
+  .login-button{
+    background-color: white;
+    width: 250px;
+    color: black;
+    font-weight: bolder;
+  }
+
+  .login-button:hover{
+    background-color: rgb(21, 21, 222);
+  }

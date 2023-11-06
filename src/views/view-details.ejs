@@ -1,0 +1,107 @@
+<!-- View Details Page -->
+
+<div class="viewdetails-container">
+   
+<img class="viewdetails-image" src="https://3.bp.blogspot.com/-LjgaOufCll0/WYMpEw2K1hI/AAAAAAAAAEU/gdQRN0vtdVwpT1YZAoY_8TLOF2Ck00fCQCLcBGAs/s1600/Facebook-Profile-Background.jpg">
+      
+<h1 class="viewdetails-heading"><%= job.role %> Opportunity in <%= job.location %> at <%= job.name %></h1>
+
+<% if(locals.userEmail){%>
+    <div class="editdelete-section"> <i class="fa-solid fa-chart-line active-icon"></i>  Actively Hiring 
+  
+        <a href="/edit-job/<%= job.id %>"> <i class="fa-regular fa-pen-to-square edit-icon"> </i> </a>
+    
+        <a href="/delete-job/<%= job.id %>" onclick="confirmDelete('<%= job.id %>')">
+            <i class="fa-solid fa-trash-can delete-icon"></i>
+          </a>
+          
+    
+    </div>
+
+<%}%>
+
+<input type="hidden" class="form-control" id="id" name="id" value="<%= job.id %>">
+
+<h5 class="companyname"><i class="fa-solid fa-building"></i> <%= job.name %></h5>
+
+<p class="card-text"><i class="fa-solid fa-user-plus"></i> <%= job.role %></p>
+
+<p class="card-text"><i class="fa-solid fa-location-dot"></i> <%= job.location %></p>
+
+<p class="card-text"><i class="fa-solid fa-indian-rupee-sign rs-icon "></i> <%= job.lpa %> LPA</p>     
+        
+<p class="card-text"><i class="fa-solid fa-chart-simple"></i></i> No of openings: <%= job.no_of_openings %></p>
+<p class="card-text"><i class="fa-solid fa-calendar"></i> Apply By:  <%=  job.apply_by %></p>
+
+<a href="/applicants" class="applicants"><i class="fa-solid fa-users"></i> View Applicants </a>
+   
+<button disabled class="skills"><%= job.skills %></button>
+
+<% if(!locals.userEmail){%>
+  <button type="button" class="btn btn-primary margin5" data-bs-toggle="modal" data-bs-target="#exampleModal" data-companyname="<%= job.name %>" data-companyrole="<%= job.role %>">
+    Apply Now
+</button>
+
+    <%} else{%>
+        <button type="button" class="btn btn-primary margin5" data-bs-toggle="modal" data-bs-target="#exampleModal" disabled>
+            Apply Now
+        </button>
+        
+<%}%>
+
+<!-- Form to submit job application it uses modal bootstrap -->
+<form action="/applicants" method="post" id="applicationForm" enctype="multipart/form-data"> 
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h5 class="modal-title" id="exampleModalLabel">Apply in less than 1 minute </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <h5 class="companyname" name="companyname"><i class="fa-solid fa-building" ></i><%= job.name %> </h5>
+          <p class="card-text"  name="companyrole"><i class="fa-solid fa-user-plus"></i><%= job.role %> </p>
+          
+          <input type="hidden" class="form-control" id="companyname" value="<%= job.name %>" name="companyname">
+          
+          <input type="hidden" class="form-control" id="jobrole" name="jobrole" value="<%= job.role %>" >
+            <div class="input-group margin">
+                <span class="input-group-text">Name</span>
+                <input type="text" class="form-control" id="name" name="applicants_name" required placeholder="enter your name">
+            </div>
+    
+              <div class="input-group margin">
+                <span class="input-group-text ">Email</span>
+                <input required="" name="applicants_email" type="email" aria-label="email" class="form-control" placeholder="enter your email">
+              </div>
+            
+              <div class="input-group margin">
+                <span class="input-group-text ">Contact</span>
+                <input type="text" class="form-control" id="contact" name="applicants_contact" required placeholder="+(91)_ _ _ _ _ _ _ _ _ _">
+            </div>
+
+            <div class="input-group margin">
+                <span class="input-group-text">Attach Resume</span>
+            <input class="input-group-text" required type="file" id="pdfFile" name="pdfFile" accept=".pdf">
+        </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit"  class="btn btn-primary">Submit</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+    </div>
+    
+    
+    

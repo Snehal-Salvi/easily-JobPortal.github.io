@@ -1,0 +1,48 @@
+<!-- Jobs View it includes bootstrap cards -->
+<div class="main-container">
+
+  <div class="last-visit" role="alert">
+    Your last visit was on: <%= locals.lastVisit %>
+  </div>
+
+  <div class="row">
+    <% jobs.forEach(job => { %>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card mb-3 card-container">
+          <div class="card-body">
+            <div class="status">
+              <h6>Actively hiring
+                <i class="fa-solid fa-chart-line active-icon"></i>
+              </h6>
+            </div>
+            <input type="hidden" class="form-control" id="id" name="id" value="<%= job.id %>">
+            <h5 class="card-title"><%= job.name %></h5>
+            <p class="card-text"><%= job.role %></p>
+            <hr>
+            <p class="card-text"><i class="fa-solid fa-location-dot"></i> <%= job.location %></p>
+            <p class="card-text"><i class="fa-solid fa-indian-rupee-sign rs-icon"></i> <%= job.lpa %> LPA</p>
+            <button disabled class="skills"><%= job.skills %></button>
+            <p class="card-text hidden"><%= job.no_of_openings %></p>
+            <p class="card-text hidden"><%= job.apply_by %></p>
+            <a href="/view-details/<%= job.id %>" class="btn btn-primary view-details-button">View Details</a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="pagination">
+    <% if (currentPage > 1) { %>
+      <a href="/new?page=<%= currentPage - 1 %>"><i class="fa-solid fa-angles-left"></i> Previous</a>
+    <% } %>
+  
+    <% if (jobs.length === 4) { %>
+      <a href="/new?page=<%= currentPage + 1 %>">Next <i class="fa-solid fa-angles-right"></i></a>
+    <% } %>
+  </div>
+
+
+
+</div>
+

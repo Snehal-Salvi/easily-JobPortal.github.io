@@ -1,0 +1,75 @@
+/* Main Page CSS is mentioned here */
+
+:root{
+    --text-font:fangsong;
+}
+
+body{
+    background-color:  #1d1d47;
+}
+
+.custom-navbar{
+    background-color: #000037;
+    font-family: var(--text-font);
+    font-size: 20px;
+    
+}
+
+.main-container {
+    position: relative;
+    background-color: #1d1d47;
+    display: flex;
+    height: 90vh;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.text-content {
+    flex: 1;
+    font-family: var(--text-font);
+    color: rgb(172, 168, 168);
+    font-size: 20px; 
+    margin-right: 20px; 
+}
+
+.image-content img {
+    height: 480px;
+    width: 500px;
+    border-radius: 8%;
+    box-shadow:  0px 0px 6px 4px black;
+}
+
+.h2-heading {
+    font-family: var(--text-font);
+    color: white;
+    font-size: 25px;
+}
+
+.custom-btn {
+    background-color: #FF2C90;
+    color: white;
+    font-family: var(--text-font);
+    font-size: 30px;
+    border: none;
+    margin: 5px;
+}
+
+.custom-btn:hover {
+    background-color: #da096a;
+}
+
+.last-visit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px; 
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 5px 10px; 
+    border-radius: 5px;
+  }
+  

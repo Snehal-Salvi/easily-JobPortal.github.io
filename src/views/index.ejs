@@ -1,0 +1,26 @@
+<!-- Main Interface -->
+<div class="main-container">
+        <div class="content">
+            <div class="text-content">
+                <h1 class="h1-heading">A comprehensive platform for reliable 
+                    job opportunities and internships.</h1>
+                <h2 class="h2-heading">Get Discovered. Get Hired.</h2>
+
+            <a href="/new" class="btn btn-primary custom-btn">I'm A Job Seeker</a>
+
+
+              <% if (userEmail) { %>
+                <!-- If the user is logged in, redirect to the "Jobs" page -->
+                <a href="/new" class="btn btn-primary custom-btn">I'm A Recruiter</a>
+            <% } else { %>
+                <!-- If the user is not logged in, redirect to the "Recruiter" page -->
+                <a href="/register" class="btn btn-primary custom-btn">I'm A Recruiter</a>
+            <% } %>
+            
+            </div>
+            <div class="image-content">
+                <img src="https://us.123rf.com/450wm/thodonal/thodonal2209/thodonal220900868/192039121-job-search-concept-illustrated-by-pictures-on-background.jpg" alt="banner">
+        
+            </div>
+        </div>
+    </div>

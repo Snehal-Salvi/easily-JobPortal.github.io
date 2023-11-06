@@ -1,0 +1,83 @@
+<!-- Edit job View -->
+
+<div class="layout-container">
+    <form action="/edit-job" method="post"> 
+             <h1 class="form-heading">Update Job</h1>
+   
+             <% if(errorMessage){ %>
+               <div class="alert alert-danger" role="alert">
+                   <%= errorMessage %>
+                 </div>
+                 <% } %>
+
+                 <input type="hidden" class="form-control" id="id" name="id" value="<%= job.id %>">
+   
+                 <div class="form-group">
+                    <label for="jobCategory">Job Category:</label>
+                    <select required name="job_category">
+                        <option disabled>select job category</option>
+                        <option value="Tech" <% if (job.job_category === 'Tech') { %>selected<% } %>>Tech</option>
+                        <option value="Non-Tech" <% if (job.job_category === 'Non-Tech') { %>selected<% } %>>Non Tech</option>
+                    </select>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="jobDesignation">Job Designation:</label>
+                    <select required name="job_designation">
+                        <option disabled>select job designation</option>
+                        <option value="HR" <% if (job.job_designation === 'HR') { %>selected<% } %>>HR</option>
+                        <option value="SDE" <% if (job.job_designation === 'SDE') { %>selected<% } %>>SDE</option>
+                       
+                        <option value="DevOps" <% if (job.job_designation === 'DevOps') { %>selected<% } %>>DevOps</option>
+                        <option value="MERN Developer" <% if (job.job_designation === 'MERN Developer') { %>selected<% } %>>MERN Developer</option>
+                        <option value="JAVA Developer" <% if (job.job_designation === 'JAVA Developer') { %>selected<% } %>>JAVA Developer</option>
+                        <option value="Front-End Developer" <% if (job.job_designation === 'Front-End Developer') { %>selected<% } %>>Front-End Developer</option>
+                        <option value="Back-End Developer" <% if (job.job_designation === 'Back-End Developer') { %>selected<% } %>>Back-End Developer</option>
+                        <option value="Full-Stack Developer" <% if (job.job_designation === 'Full-Stack Developer') { %>selected<% } %>>Full-Stack Developer</option>
+                    </select>
+                </div>
+                
+   
+       <div class="form-group">
+           <label for="jobLocation">Enter job location:</label>
+           <input required name="job_location" value="<%= job.location %>" type="text">
+       </div>
+   
+       <div class="form-group">
+           <label for="companyname">Enter Company Name:</label>
+           <input required id="company_name" name="company_name" value="<%= job.name %>" type="text">
+       </div>
+   
+      
+   
+       <div class="form-group">
+           <label for="salary">Enter Salary(in LPA):</label>
+           <input required name="salary" value="<%= job.lpa %>" type="text">
+       </div>
+   
+       <div class="form-group">
+           <label for="noofopenings">Total Positions</label>
+           <input required name="no_of_openings" value="<%= job.no_of_openings %>" type="text">
+       </div>
+   
+       
+       <div class="form-group">
+        <label for="skills_required">Skills Required:</label>
+        <select required multiple name="skills_required" class="form-select" aria-label="Default select example">
+            <option disabled>select skills required for this job</option>
+            <% for (let skill of ['React', 'NodeJs', 'Angular', 'MongoDB', 'SQL', 'Express', 'Java', 'SpringBoot', 'C++', 'Data Structures & Algo']) { %>
+                <option value="<%= skill %>" 
+                    <% if (job.skills.includes(skill)) { %>selected<% } %>
+                ><%= skill %></option>
+            <% } %>
+        </select>
+        <span class="form-group">Apply By</span>
+        <input name="apply_by" type="date" class="form-control" value="<%= job.apply_by %>" placeholder="apply_by" aria-label="Server">
+    </div>
+         <button class="submit-btn w-100 mb-3 mt-2 btn btn-md btn-success" type="submit">
+           Update
+         </button>
+   
+   </form> 
+   </div>
